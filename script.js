@@ -23,6 +23,29 @@ var upCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q
 var lowCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var numbers = [1,2,3,4,5,6,7,8,9,0];
 var specChar = ["!","@","#","$","%","^","&","*","~","(",")","-","+"];
+
+// Concatonated Arrays //
+
+// Upper combinations //
+var upandlowCase = upCase.concat(lowCase);
+var upandnumbers = upCase.concat(numbers);
+var upandspecChar = upCase.concat(specChar);
+var uplownumber = upCase.concat(lowCase, numbers);
+var uplownumberspec = upCase.concat(lowCase, numbers, specChar);
+
+//Lower combinations //
+
+var lowandnumbers = lowCase.concat(numbers);
+var lowandspecChars = lowCase.concat(specChar);
+var lownumberspec = lowCase.concat(numbers, specChar);
+
+//Special Character combinations //
+
+var numbersandspecChar = numbers.concat(specChar);
+
+
+// variables for prompts //
+
 var selUpper;
 var selLower;
 var selNum;
@@ -30,7 +53,7 @@ var selChar;
 
 // testing variable for for loop "
 
-var characters = ["A","B","C","D","E","F","G","H","I","J","K"]
+var charMix = []
 
 // Prompt message asking for a password length. Description of how many numbers allowed in message. //
 
@@ -54,12 +77,14 @@ else{
 }
 
 // testing for loop in console //
+
+// Only Upper Case Letters are displayed //
+
 if(selUpper){ // push all the UpperCase Letters into an array.
-  for (var k=0; k< passwordLG; k++){    
-    console.log(characters);
-    
-  }
-
+  for (var k=0; k<passwordLG; k++){
+    var calcNum = Math.floor(Math.random()*upCase.length);
+    var upperLetters = upCase[calcNum];
+    charMix.push(upperLetters);
+    console.log(upperLetters);
+    }
 }
-
-
