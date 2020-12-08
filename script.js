@@ -58,7 +58,12 @@ function generatePassword(){
   
   // Output arrays for each if statements //
   
-  var characterUpdate = []
+  var characterUpdate = [];
+
+  // Output of array for characterUpdate using original password length //
+  // This is required otherwise all "true" selected variables show password length qty //
+
+  var combinedPassword = [];
   
   // Prompt message asking for a password length. Description of how many numbers allowed in message. //
   
@@ -105,7 +110,7 @@ function generatePassword(){
 
   if(numberSelected){ // push all numbers into an array //
     for (var k=0; k < passwordLG; k++){
-      var calcNum = Math.floor(Math.random()*numbers.length)
+      var calcNum = Math.floor(Math.random()*numbers.length);
       var numberValues = numbers[calcNum];
       characterUpdate.push(numberValues);
       console.log(numberValues);
@@ -114,19 +119,32 @@ function generatePassword(){
 
   if(characterSelected){
     for (var k=0; k < passwordLG; k++){
-      var calcNum = Math.floor(Math.random()*specChar.length)
+      var calcNum = Math.floor(Math.random()*specChar.length);
       var characterValues = specChar[calcNum];
       characterUpdate.push(characterValues);
       console.log(characterValues);
     }
   }
 
+  // In this for loop, the combined password from all the "true" selected promps is ... //
+  // reentered utilizing defined password length. It outputs to the combinedPassword array //
 
+  for (var k=0; k < passwordLG; k++){
+    var calcNum = Math.floor(Math.random()*characterUpdate.length);
+    var finalCharacterValues = characterUpdate[calcNum];
+    combinedPassword.push(finalCharacterValues);
+    console.log(finalCharacterValues);
+    
+  }
   // return all values added in the character update array //
   // Currently testing array output //
   // results of array output show quantity of each selected value in each if statement //
+
+  // Extra array required to combine all "True" selected values into same password length requirement //
+  // combinedPassword array is returned with join method. The join method takes the array items and puts ... //
+  // ... into a usable string to print //
   
-  return characterUpdate.join();
+  return combinedPassword.join();
 
 }
   
