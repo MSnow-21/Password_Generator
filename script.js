@@ -103,8 +103,28 @@ function generatePassword(){
     }
   }
 
+  if(numberSelected){ // push all numbers into an array //
+    for (var k=0; k < passwordLG; k++){
+      var calcNum = Math.floor(Math.random()*numbers.length)
+      var numberValues = numbers[calcNum];
+      characterUpdate.push(numberValues);
+      console.log(numberValues);
+    }
+  }
+
+  if(characterSelected){
+    for (var k=0; k < passwordLG; k++){
+      var calcNum = Math.floor(Math.random()*specChar.length)
+      var characterValues = specChar[calcNum];
+      characterUpdate.push(characterValues);
+      console.log(characterValues);
+    }
+  }
+
 
   // return all values added in the character update array //
+  // Currently testing array output //
+  // results of array output show quantity of each selected value in each if statement //
   
   return characterUpdate.join();
 
