@@ -13,10 +13,6 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//
-
-// This is where the new code starts 120620 //
-
 // Adding function call - password variable called out on function write password //
 
 function generatePassword(){
@@ -28,27 +24,6 @@ function generatePassword(){
   var numbers = [1,2,3,4,5,6,7,8,9,0];
   var specChar = ["!","@","#","$","%","^","&","*","~","(",")","-","+"];
   
-  // Concatonated Arrays for testing //
-  // Commenting out until usage //
-  
-  // Upper combinations //
-
-  // var upandlowCase = upCase.concat(lowCase);
-  // var upandnumbers = upCase.concat(numbers);
-  //var upandspecChar = upCase.concat(specChar);
-  // var uplownumber = upCase.concat(lowCase, numbers);
-  //var uplownumberspec = upCase.concat(lowCase, numbers, specChar);
-  
-  //Lower combinations //
-  
-  // var lowandnumbers = lowCase.concat(numbers);
-  // var lowandspecChars = lowCase.concat(specChar);
-  // var lownumberspec = lowCase.concat(numbers, specChar);
-
-  //Special Character combinations //
-  
-  // var numbersandspecChar = numbers.concat(specChar);
-  
   // variables for prompts //
   
   var upperSelected;
@@ -56,7 +31,7 @@ function generatePassword(){
   var numberSelected;
   var characterSelected;
   
-  // Output arrays for each if statements //
+  // Output arrays for each if statement //
   
   var characterUpdate = [];
 
@@ -86,9 +61,9 @@ function generatePassword(){
     var characterSelected = confirm("Do you want special characters?");
   }
     
-  // UpperCase Letters in characterUpdate Array //
+  // UpperCase Letters in characterUpdate Array 
   
-  if(upperSelected){ // push all the UpperCase Letters into an array.
+  if(upperSelected){ 
     for (var k=0; k < passwordLG; k++){
       var calcNum = Math.floor(Math.random()*upCase.length);
       var upperLetters = upCase[calcNum];
@@ -97,9 +72,9 @@ function generatePassword(){
     }
   }
   
-  // Testing lowercase letters in characterUpdate Array //
-
-  if(lowerSelected){ // push all the Lowercase letters into an array.
+  // Lowercase letters in characterUpdate Array 
+  
+  if(lowerSelected){ 
     for (var k=0; k < passwordLG; k++){
       var calcNum = Math.floor(Math.random()*lowCase.length);
       var lowerLetters = lowCase[calcNum];
@@ -108,7 +83,9 @@ function generatePassword(){
     }
   }
 
-  if(numberSelected){ // push all numbers into an array //
+  // Numbers into characterUpdate Array
+
+  if(numberSelected){ 
     for (var k=0; k < passwordLG; k++){
       var calcNum = Math.floor(Math.random()*numbers.length);
       var numberValues = numbers[calcNum];
@@ -116,6 +93,8 @@ function generatePassword(){
       console.log(numberValues);
     }
   }
+
+  // Characters into characterUpdate Array
 
   if(characterSelected){
     for (var k=0; k < passwordLG; k++){
@@ -135,16 +114,16 @@ function generatePassword(){
     combinedPassword.push(finalCharacterValues);
     console.log(finalCharacterValues);
     
-  }
-  // return all values added in the character update array //
-  // Currently testing array output //
-  // results of array output show quantity of each selected value in each if statement //
+  }  
 
   // Extra array required to combine all "True" selected values into same password length requirement //
   // combinedPassword array is returned with join method. The join method takes the array items and puts ... //
   // ... into a usable string to print //
+
+  // returning combinedPassword variable array into for function.
+  // Note - required '' in join method to remove all ","
   
-  return combinedPassword.join();
+  return combinedPassword.join('');
 
 }
   
