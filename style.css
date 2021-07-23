@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: rgb(235, 239, 243);
 }
 
 .wrapper {
@@ -33,11 +33,15 @@ header {
 /* added h2 property */
 h2 {
   text-align: center;
+  text-shadow: 3px 3px rgb(235, 229, 229);
 }
 
+h4 {
+  text-align: center;
+}
 .card {
   background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
+  border-radius: 10px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
@@ -87,10 +91,14 @@ h2 {
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: 5px 16px 16px 20px;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+}
+
+.generate{
+  background-color: blue;
 }
 
 button[disabled] {
@@ -117,7 +125,7 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 4px dashed #c0c7cf;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
