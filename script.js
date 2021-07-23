@@ -19,13 +19,18 @@ function generatePassword(){
 
   // Arrays for for-loops //
   
-  let upCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  let upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let lowCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
   let numbers = [1,2,3,4,5,6,7,8,9,0];
   let specChar = ["!","@","#","$","%","^","&","*","~","(",")","-","+"];
   
-  // variables for prompts //
-  
+  console.log(typeof(upperCaseLetters));
+  console.log(typeof(lowCase));  
+
+  upperCaseArray = upperCaseLetters.split("");
+  console.log(upperCaseArray);
+  console.log(typeof(upperCaseArray))
+ 
   let upperSelected;
   let lowerSelected;
   let numberSelected;
@@ -64,18 +69,19 @@ function generatePassword(){
   // UpperCase Letters in characterUpdate Array 
   
   if(upperSelected){ 
-    for (let k=0; k < passwordLG; k++){
-      let calcNum = Math.floor(Math.random()*upCase.length);
-      let upperLetters = upCase[calcNum];
+    for (let i=0; i < passwordLG; i++){
+      let calcNum = Math.floor(Math.random()*upperCaseArray.length);
+      console.log(calcNum);
+      let upperLetters = upperCaseArray[calcNum];
       characterUpdate.push(upperLetters);
-      console.log(upperLetters);
+
     }
   }
   
   // Lowercase letters in characterUpdate Array 
   
   if(lowerSelected){ 
-    for (let k=0; k < passwordLG; k++){
+    for (let i=0; i < passwordLG; i++){
       let calcNum = Math.floor(Math.random()*lowCase.length);
       let lowerLetters = lowCase[calcNum];
       characterUpdate.push(lowerLetters);
@@ -86,7 +92,7 @@ function generatePassword(){
   // Numbers into characterUpdate Array
 
   if(numberSelected){ 
-    for (let k=0; k < passwordLG; k++){
+    for (let i=0; i < passwordLG; i++){
       let calcNum = Math.floor(Math.random()*numbers.length);
       let numberValues = numbers[calcNum];
       characterUpdate.push(numberValues);
@@ -108,7 +114,7 @@ function generatePassword(){
   // In this for loop, the combined password from all the "true" selected promps is ... //
   // reentered utilizing defined password length. It outputs to the combinedPassword array //
 
-  for (let k=0; k < passwordLG; k++){
+  for (let i=0; i < passwordLG; i++){
     let calcNum = Math.floor(Math.random()*characterUpdate.length);
     let finalCharacterValues = characterUpdate[calcNum];
     combinedPassword.push(finalCharacterValues);
@@ -123,7 +129,7 @@ function generatePassword(){
   // returning combinedPassword variable array into for function.
   // Note - required '' in join method to remove all ","
   
-  return combinedPassword.join('');
+  return combinedPassword.join("");
 
 }
   
