@@ -30,7 +30,11 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
-/* added h2 property */
+h1{
+  text-align: center;
+  text-shadow: 3px 3px rgb(235, 229, 229);
+}
+
 h2 {
   text-align: center;
   text-shadow: 3px 3px rgb(235, 229, 229);
