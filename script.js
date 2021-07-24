@@ -1,5 +1,5 @@
 // Assignment Code
-let generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
@@ -10,26 +10,26 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// Adding function call - password variable called out on function write password //
-
 function generatePassword(){
 
-  // Arrays for for-loops //
-  
   let upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let lowCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  let lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
   let numbers = [1,2,3,4,5,6,7,8,9,0];
   let specChar = ["!","@","#","$","%","^","&","*","~","(",")","-","+"];
+
+  // Checking typeof
   
   console.log(typeof(upperCaseLetters));
-  console.log(typeof(lowCase));  
+  console.log(typeof(lowCase));
+
+  //Changing uppercaseletters string into an array //
 
   upperCaseArray = upperCaseLetters.split("");
   console.log(upperCaseArray);
   console.log(typeof(upperCaseArray))
+
+  //Changing lowercaseletters string into an array //
+  lowerCaseArray = lowerCaseLetters.split("");
  
   let upperSelected;
   let lowerSelected;
@@ -82,8 +82,10 @@ function generatePassword(){
   
   if(lowerSelected){ 
     for (let i=0; i < passwordLG; i++){
-      let calcNum = Math.floor(Math.random()*lowCase.length);
-      let lowerLetters = lowCase[calcNum];
+      let calcNum = Math.floor(Math.random()*lowerCaseArray.length);
+      console.log(calcNum)
+      let lowerLetters = lowerCaseArray[calcNum];
+      console.log(lowerLetters)
       characterUpdate.push(lowerLetters);
       console.log(lowerLetters);
     }
