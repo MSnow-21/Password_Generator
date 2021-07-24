@@ -15,7 +15,7 @@ function generatePassword(){
   let upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
   let numbers = "1234567890";
-  let specChar = ["!","@","#","$","%","^","&","*","~","(",")","-","+"];
+  let specChar = "!@#$%^&*~()-+";
 
   // Checking typeof
   
@@ -33,6 +33,9 @@ function generatePassword(){
 
   //Changing numbers string into an array //
   numbersArray = numbers.split("");
+
+  //Changing special character string into an array //
+  specialCharArray = specChar.split("");
  
   let upperSelected;
   let lowerSelected;
@@ -104,9 +107,9 @@ function generatePassword(){
   // Characters into characterUpdate Array
 
   if(characterSelected){
-    for (let k=0; k < passwordLG; k++){
-      let calcNum = Math.floor(Math.random()*specChar.length);
-      let characterValues = specChar[calcNum];
+    for (let i=0; i < passwordLG; i++){
+      let calcNum = Math.floor(Math.random()*specialCharArray.length);
+      let characterValues = specialCharArray[calcNum];
       characterUpdate.push(characterValues);
       console.log(characterValues);
     }
