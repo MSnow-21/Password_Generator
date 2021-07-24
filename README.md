@@ -1,8 +1,8 @@
 # Password_Generator
 
-## Link to Deployed Application: https://msnow-21.github.io/Password_Generator/
+### Link to Deployed Application: https://msnow-21.github.io/Password_Generator/
 
-## Technologies Used: HTML, CSS, and JavaScript
+### Technologies Used: HTML, CSS, and JavaScript
 
 Usage: The Password Generator is an application that generates a password by clicking a “Generate Password” button and answering a password length prompt. After a length is determined, the user is then asked through prompts whether they would like Capital Letters, Lower Case Letters, Numbers, or Special Characters in their password.
 
