@@ -14,7 +14,7 @@ function generatePassword(){
 
   let upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-  let numbers = [1,2,3,4,5,6,7,8,9,0];
+  let numbers = "1234567890";
   let specChar = ["!","@","#","$","%","^","&","*","~","(",")","-","+"];
 
   // Checking typeof
@@ -30,6 +30,9 @@ function generatePassword(){
 
   //Changing lowercaseletters string into an array //
   lowerCaseArray = lowerCaseLetters.split("");
+
+  //Changing numbers string into an array //
+  numbersArray = numbers.split("");
  
   let upperSelected;
   let lowerSelected;
@@ -53,13 +56,9 @@ function generatePassword(){
   
   if (passwordLG < 8 ){
     alert("Please enter a password that has at least 8 characters");
-  }
-  
-  else if (passwordLG > 128){
+  } else if (passwordLG > 128) {
     alert("Please enter a password that is less than 128 characters");
-  }
-  
-  else{
+  } else {
     upperSelected = confirm("Do you want capital letters?");
     lowerSelected = confirm("Do you want lowercase letters?");
     numberSelected = confirm("Do you want numbers?");
@@ -95,8 +94,8 @@ function generatePassword(){
 
   if(numberSelected){ 
     for (let i=0; i < passwordLG; i++){
-      let calcNum = Math.floor(Math.random()*numbers.length);
-      let numberValues = numbers[calcNum];
+      let calcNum = Math.floor(Math.random()*numbersArray.length);
+      let numberValues = numbersArray[calcNum];
       characterUpdate.push(numberValues);
       console.log(numberValues);
     }
